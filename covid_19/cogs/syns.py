@@ -1,9 +1,11 @@
 import discord
 import io
+import lxml
 from discord.ext import commands
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import requests
 from utils.codes import cont1, cont2, alt_names
 
 class Stats(commands.Cog):
@@ -15,11 +17,18 @@ class Stats(commands.Cog):
     deaths_reported = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     recovered_cases = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
     
-    data_list = pd.read_html('https://www.worldometers.info/coronavirus/')
+    url = 'https://www.worldometers.info/coronavirus/'
+    header = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
+    "X-Requested-With": "XMLHttpRequest"
+    }
+
+    r = requests.get(url, headers=header)
+    data_list = pd.read_html(r.text)
     data_table = data_list[0].replace(to_replace = np.NaN, value = 0)
     
     cols = confirmed_cases.keys()
-
+    date = list(confirmed_cases)[-1]
     r_cols = recovered_cases.keys()
 
     confirmed_f = confirmed_cases.loc[:, cols[4]:cols[-1]]
@@ -44,7 +53,7 @@ class Stats(commands.Cog):
     for i in r_dates:
         total_recovered.append(recovered_f[i].sum())
 
-    @commands.command(aliases=['stat', 'stats', 's'])
+    @commands.command(aliases=['stat', 'stats'])
     async def data(self, ctx, location='all'):
 
         if (len(location) == 2 or len(location) == 3):
@@ -68,9 +77,9 @@ class Stats(commands.Cog):
             last_rc = self.recovered_cases[self.r_dates[-2]].sum()
 
             confirmed_c = self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['TotalCases'].sum()
-            confirmed_new = f"+{int(self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['NewCases'].sum())}"
+            confirmed_new = self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['NewCases'].sum()
             deaths_c = self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['TotalDeaths'].sum()
-            deaths_new = f"+{int(self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['NewDeaths'].sum())}"
+            deaths_new = (self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['NewDeaths'].sum())
             recovered_c = self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['TotalRecovered'].sum()
             active_cases = self.data_table[self.data_table['Country,Other'].str.contains('Total:')]['ActiveCases'].sum()
 
@@ -85,7 +94,7 @@ class Stats(commands.Cog):
             confirmed_c = self.data_table[self.data_table['Country,Other'].str.contains(location)]['TotalCases'].sum()
             confirmed_new = self.data_table[self.data_table['Country,Other'].str.contains(location)]['NewCases'].sum()
             deaths_c = self.data_table[self.data_table['Country,Other'].str.contains(location)]['TotalDeaths'].sum()
-            deaths_new = f"+{int(self.data_table[self.data_table['Country,Other'].str.contains(location)]['NewDeaths'].sum())}"
+            deaths_new = (self.data_table[self.data_table['Country,Other'].str.contains(location)]['NewDeaths'].sum())
             recovered_c = self.data_table[self.data_table['Country,Other'].str.contains(location)]['TotalRecovered'].sum()
             active_cases = self.data_table[self.data_table['Country,Other'].str.contains(location)]['ActiveCases'].sum()
 
@@ -93,21 +102,35 @@ class Stats(commands.Cog):
             await ctx.send("Location not found")
 
 
+        if confirmed_new == 0:
+            confirmed_new == ' '
+        
+        if deaths_new == 0:
+            deaths_new == ' '
+
+        """confirmed_new = f'+{confirmed - last_cf}'
+        deaths_new =  f'+{deaths - last_dt}'
+        recovered_new = f'+{recovered - last_rc}'"""
+
         mortality_rate = round((deaths_c/confirmed_c)*100, 2)
         recovery_rate = round((recovered_c/confirmed_c)*100, 2)
 
         if location == 'ALL':
             location = 'Total World Cases'
+        elif location == 'USA':
+            location = 'US'
+        elif location == 'S. Korea':
+            location = 'Korea, South'
         elif location == 'UK':
             location = 'United Kingdom'
 
         embed = discord.Embed(
             title = f'Coronavirus (COVID-19) cases over time',
-            description = f'``\n**Showing Cases for {location}**\n------------------------------------------------\n:warning: **Confirmed Cases:** {confirmed_c} ({confirmed_new})\n------------------------------------------------\n:skull: **Deaths:** {int(deaths_c)} ({deaths_new})\n------------------------------------------------\n:heart: **Recovered:** {int(recovered_c)}\n------------------------------------------------\n:mask: **Active Cases:** {int(active_cases)}\n------------------------------------------------\n:coffin: **Mortality Rate:** {mortality_rate}%\n------------------------------------------------\n:+1: **Recovery Rate:** {recovery_rate}%\n------------------------------------------------',
+            description = f'``\n**Showing Cases for {location}**\n------------------------------------------------\n:warning: **Confirmed Cases:** {confirmed_c} ({confirmed_new})\n------------------------------------------------\n:skull: **Deaths:** {int(deaths_c)} ({deaths_new})\n------------------------------------------------\n:heart: **Recovered:** {int(recovered_c)}\n------------------------------------------------\n:mask: **Active Cases:** {active_cases}\n------------------------------------------------\n:coffin: **Mortality Rate:** {mortality_rate}%\n------------------------------------------------\n:+1: **Recovery Rate:** {recovery_rate}%\n------------------------------------------------',
             color = discord.Color.blue()
         )
 
-        embed.set_footer(text="Information collected from Worldometers and from GitHub page CSSEGISandData, inspired by picklejason ;)")
+        embed.set_footer(text=f"Information collected from WOrldometers and GitHub page CSSEGISandData, inspired by picklejason ;)")
 
         fig = plt.figure(dpi=150)
         plt.style.use('seaborn')

@@ -14,7 +14,7 @@ class helper(commands.Cog):
         embed = discord.Embed(
             color = discord.Color.blue(),
             title = "What would you like to know about coronavirus?",
-            description = "Get information and guidance regarding the current outbreak of coronavirus disease (COVID-19) -\nSituation Report: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/\nCoverage in Map: https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd\n\n"
+            description = "Get information and guidance regarding the current outbreak of coronavirus disease (COVID-19) -\nSituation Report: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/ \nCoverage in Map: https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd \n\n"
         )
 
         embed.add_field(name="Reply with the following commands to get the latest information of the topic -", value="``\n------------------------------------------------", inline=False)
@@ -39,7 +39,7 @@ class helper(commands.Cog):
         embed1 = discord.Embed(
             color = discord.Color.dark_blue(),
             title = "How to protect yourself?",
-            description = "Watch the video: https://youtu.be/8c_UJwLq8PI\n\n1. Wash your hands frequently\n\n2. Avoid touching your eyes, mouth and nose\n\n3. Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze\n\n4. Avoid crowded places\n\n5. Stay at home if you feel unwell - even with a slight fever and cough\n\n6. If you have a fever, cough and difficulty breathing, seek medical care early - but call by phone first\n\n7. Stay aware of the latest information from WHO\n"
+            description = "Watch the video: https://youtu.be/8c_UJwLq8PI \n\n1. Wash your hands frequently for 15 to 20 seconds\n\n2. Avoid touching your eyes, mouth and nose\n\n3. Cover your mouth and nose with your elbow crease or tissue when you cough or sneeze\n\n4. Avoid crowded places or standing in group of 5 or more than 5 people\n\n5. Stay at home if you feel unwell - even with a slight fever and cough\n\n6. If you have a fever, cough and difficulty breathing, seek medical care early - seek help through call\n\n7. Stay updated of the latest information from WHO\n"
         )
 
         embed1.set_footer(text="for menu type c!help")
@@ -55,8 +55,8 @@ class helper(commands.Cog):
         embed2.add_field(name="`c!help 22` command for", value="How does COVID-19 spread?", inline=False)
         embed2.add_field(name="`c!help 23` command for", value="Can I catch COVID-19 from feces, animals or pets?", inline=False)
         embed2.add_field(name="`c!help 24` command for", value="Can I catch COVID-19 from infected surfaces of packages from infected areas?", inline=False)
-        embed2.add_field(name="`c!help 25` command for", value="What can I do to protect myself and prevent the spread of disease?", inline=False)
-        embed2.add_field(name="`c!help 26` command for", value="What should I do if I have visited an area here COVID-19 is spreading?", inline=False)
+        embed2.add_field(name="`c!help 25` command for", value="What can I do to protect myself and prevent the spread of virus?", inline=False)
+        embed2.add_field(name="`c!help 26` command for", value="What should I do if I have visited an area where COVID-19 is spreading?", inline=False)
         embed2.add_field(name="`c!help 27` command for", value="What are the treatment options for COVID-19 (including drugs, vaccines, therapies?)", inline=False)
         embed2.add_field(name="`c!help 28` command for", value="Should I wear a mask to protect myself?", inline=False)
         embed2.add_field(name="`c!help 29` command for", value="Is there anything I should not do?", inline=False)
@@ -69,7 +69,7 @@ class helper(commands.Cog):
         embed3 = discord.Embed(
             color = discord.Color.dark_purple(),
             title = "WHO Mythbusters",
-            description = "\nThere is a lot of false information around. These are the facts -\n\nPeople of all ages CAN be infected by the coronavirus. Older people and people with pre-existing medical conditions (such as asthma, diabetes, heart diseases) appear to be more vulnerable to becoming severely ill with the virus.\n\nCold weather and snow CANNOT kill the coronavirus.\n\nThe coronavirus CAN be transmitted in areas with hot and humid climates.\n\nThe coronavirus CANNOT be transmitted through mosquito bites.\n\nThere is NO evidence that companion animals/pets such as dogs or cats transmit the coronavirus.\n\nTaking a hot bath DOES NOT prevent the coronavirus.\n\nUltraviolet light SHOULD NOT be used for sterilization and can cause skin irritation.\n\nThermal scanners CAN detect if people have a fever but CANNOT detect whether or not someone has the coronavirus.\n\nSpraying alcohol or chlorine all over your body WILL NOT kill viruses that have already entered your body.\n\nVaccines against pneumonia such as pneumococcal vaccine and Haemophilus Influenzae type b (Hib) vaccine, DO NOT provide protection against the coronavirus.\n\nThere is NO evidence that regularly rinsing the nose with saline has protected people from infection with the coronavirus.\v\vGarlic is healthy but there is NO evidence from the current outbreak that eating garlic has protected people from the coronavirus.\n\nAnibiotics DO NOT work aginst viruses, antibiotics only work against bacteria.\n\nTo date, there is NO specific medicine recommended to prevent or treat the coronavirus.\n\nCheck the facts on the WHO website: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters\n"
+            description = "\nThere is a lot of misinformation circulating around. Following are the authentic facts -\n\nPeople of all ages CAN be infected by the coronavirus. Older people and people with pre-existing medical conditions (such as asthma, diabetes, heart diseases) appear to be more vulnerable to becoming severely ill with the virus.\n\nCold weather and snow CANNOT kill the coronavirus.\n\nThe coronavirus CAN be transmitted in areas with hot and humid climates.\n\nThe coronavirus CANNOT be transmitted through mosquito bites.\n\nThere is NO evidence that companion animals/pets such as dogs or cats transmit the coronavirus.\n\nTaking a hot bath DOES NOT prevent the coronavirus.\n\nUltraviolet light SHOULD NOT be used for sterilization and can cause skin irritation.\n\nThermal scanners CAN detect if people have a fever but CANNOT detect whether or not someone has the coronavirus.\n\nSpraying alcohol or chlorine all over your body WILL NOT kill viruses that have already entered your body.\n\nVaccines against pneumonia such as pneumococcal vaccine and Haemophilus Influenzae type b (Hib) vaccine, DO NOT provide protection against the coronavirus.\n\nThere is NO evidence that regularly rinsing the nose with saline has protected people from getting infected with the coronavirus.\v\vGarlic is healthy but there is NO evidence from the current outbreak that eating garlic has protected people from the coronavirus.\n\nAnibiotics DO NOT work aginst viruses, antibiotics only work against bacteria.\n\nTill date, there is NO specific medicine recommended to prevent or treat the coronavirus.\n\nCheck the facts on the WHO website: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters\n"
         )
 
         embed3.set_footer(text="for menu type c!help")
@@ -77,7 +77,7 @@ class helper(commands.Cog):
         embed4 = discord.Embed(
             color = discord.Color.dark_magenta(),
             title = "Travel Advice",
-            description = "\nWHO continues to advice against the application of travel or trade restrictions to countries experiencing COVID-19 outbreaks.\n\nIt is prudent for travellers who are sick to delay or avoid travel to affected areas, in particular for elderly travellers and people with chronic diseases or underlying health conditions. 'Affected areas' are considered those countries, provinces, territories or cities experiencing ongooing transmission of COVID-19, in contrast to areas reporting only imported cases.\n\nGeneral recommendations for all travellers include:\n\nWash your hands frequently\n\nAvoid touching your eyes, mouth and nose\n\nCover your mouth and nose with your bent elbow or tissue when you cough or sneeze\n\nStay more than 1 meter(3 feet) away from a person who is sick\n\nFollow proper hygiene practices\n\nOnly wear masks if you are ill with COVID-19 symptoms (especially coughing) or looking after someone who may have COVID-19\n\n**Travellers returning from affected areas should - **\n\nSelf-monior for symptoms for 14 days and follow national protocolsof receiving countries. Some countries may require returning travellers to enter quarantine.\n\nIf symptoms occur, such as fever, or cough or difficulty breathing, travellers are advised to contact locak health care providers, preferably by phone, and inform them of their symptoms and their travel history.\n\nFor latest travel advice: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/travel-advice \n\nFor the latest situation reports for affected areas: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/\n\nFor advice on proper food hygiene practices: https://www.who.int/foodsafety/publications/consumer/en/5keys_en.pdf?ua=1&ua=1\n\nFor advice on visiting live animal markets: https://www.who.int/health-topics/coronavirus/who-recommendations-to-reduce-risk-of-transmission-of-emerging-pathogens-from-animals-to-humans-in-live-animal-markets"
+            description = "\nWHO continues to advice to restrict/ban all travels and trades to the countries experiencing COVID-19.\n\nIt is highly recommended for travellers who are sick to cancel or avoid travelling to coronavirus affacted places, specifically olf aged travellers and people suffering from chronic diseases or facing poor health conditions. Affected places are those Countries, Territories or Cities experiencing ongoing outbreak of COVID-19.\n\nGeneral recommendations for all travellers include:\n\nWash your hands frequently for 15 to 20 seconds.\n\nAvoid touching your eyes, mouth and nose\n\nCover your mouth and nose with your elbow crease or tissue when you cough or sneeze.\n\nStay more than 2 meter(6 feet) away from a sick person\n\nFollow proper hygiene practices\n\nWear a mask and keep yourself in isolation if you are tested positive for COVID-19\n\n**Travellers returning from affected areas should - **\n\nAvoid going out and self isolate yourself for 14 days and follow your Country's quarantine protocol and take adviced preventive measures.\n\nIf you are having any one of the symptoms such as continuous fever, cough or having difficulty in breathing then contact local healthcares preferably by call, tell them about your travel history and get a COVID-19 test done as soon as possible.\n\nFor latest travel advice: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/travel-advice \n\nFor the latest situation reports for affected areas: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/ \n\nFor advice on proper food hygiene practices: https://www.who.int/foodsafety/publications/consumer/en/5keys_en.pdf?ua=1&ua=1\n\nFor advice on visiting live animal markets: https://www.who.int/health-topics/coronavirus/who-recommendations-to-reduce-risk-of-transmission-of-emerging-pathogens-from-animals-to-humans-in-live-animal-markets"
         )
 
         embed4.set_footer(text="for menu type c!help")
@@ -85,7 +85,7 @@ class helper(commands.Cog):
         embed5 = discord.Embed(
             color = discord.Color.magenta(),
             title = "News & Press",
-            description = "\n**Situation reports:** Situation reports provide the latest updates on the novel coronavirus outbreak/\nhttps://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/\n\n**Rolling updates:** Rolling updates on coronavirus disease (COVID-19) sourced from across WHO media.\nhttps://who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen\n\n**News articles:** All news releases, statements and notes for the media.\nhttps://who.int/emergencies/diseases/novel-coronavirus-2019/media-resources/news\n\n**Press briefings:** Coronavirus disease (COVID-19) press briefings including videos, audio and transcripts.\nhttps://who.int/emergencies/diseases/novel-coronavirus-2019/media-resources/press-briefings"
+            description = "\n**Situation reports:** Situation reports provide the latest updates on the novel coronavirus outbreak/\n https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/ \n\n**Rolling updates:** Rolling updates on coronavirus disease (COVID-19) sourced from across WHO media.\n https://who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen \n\n**News articles:** All news releases, statements and notes for the media.\n https://who.int/emergencies/diseases/novel-coronavirus-2019/media-resources/news \n\n**Press briefings:** Coronavirus disease (COVID-19) press briefings including videos, audio and transcripts.\nhttps://who.int/emergencies/diseases/novel-coronavirus-2019/media-resources/press-briefings"
         )
 
         embed5.set_footer(text="for menu type c!help")
@@ -93,7 +93,7 @@ class helper(commands.Cog):
         embed20 = discord.Embed(
             color = discord.Color.blurple(),
             title = "What are coronaviruses? What is COVID-19 and how are they related to SARS?",
-            description = "\n**What is a coronavirus?**\nCoronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several coronaviruses are known to cause respirators infections ranging from the common cold to more severe diseases such as Middle Ease Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19\n\n**What is COVID-19?** COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.\n\n**Is COVID-19 same as SARS?**\nNo. The virus that causes COVID-19 and the one that caused the outbreak of Severe Acute Respiratory Syndrome (SARS) in 2003 are related to each other genetically, but the diseases they cause are quite different. SARS was more deadly but much less infectious than COVID-19. There have been no outbreaks of SARS anywhere in the world since 2003."
+            description = "\n**What is a coronavirus?**\nCoronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several coronaviruses are known to cause respirators infections ranging from the common cold to more severe diseases such as Middle Ease Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19\n\n**What is COVID-19?**\nCOVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.\n\n**Is COVID-19 same as SARS?**\nNo. The virus that causes COVID-19 and the one that caused the outbreak of Severe Acute Respiratory Syndrome (SARS) in 2003 are related to each other genetically, but the diseases they cause are quite different. SARS was more deadly but much less infectious than COVID-19. There have been no outbreaks of SARS anywhere in the world since 2003."
         )
 
         embed20.set_footer(text="`c!help 3` for questions and c!help for menu.")
@@ -132,10 +132,14 @@ class helper(commands.Cog):
 
         embed25 = discord.Embed(
             color = discord.Color.blurple(),
-            title = "What can I do to protect myself and prevent the spread of disease?",
-            description = "\n\n**Protection measures for everyone**\n\nStay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Many countries around the world have seen cases of COVID-19 and several have seen outbreaks. Authorities in China and some other countries have succeeded in slowing or stopping their outbreaks. However, the situation is unpredictable so check regularly for the latest news.\n\nYou can reduce your chances of being infected or spreading COVID-19 by taking some simple precautions:\n\n**Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.**\nWhy? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.\n\n**Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.**\nWhy?  When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.\n\n**Avoid touching eyes, nose and mouth**\nWhy? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.\n\n** Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.**\nWhy? Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, flu and COVID-19.\n\n**Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.**\nWhy? National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections.\n\n**Keep up to date on the latest COVID-19 hotspots (cities or local areas where COVID-19 is spreading widely). If possible, avoid traveling to places  – especially if you are an older person or have diabetes, heart or lung disease.**\nWhy? You have a higher chance of catching COVID-19 in one of these areas."
+            title = "What precautions I should take to prevent getting infected? Protection measures for everyone",
+            description = "Stay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Many countries around the world have seen cases of COVID-19 and several have seen outbreaks. Authorities in China and some other countries have succeeded in slowing or stopping their outbreaks. However, the situation is unpredictable so check regularly for the latest news.\n\nYou can reduce your chances of being infected or spreading COVID-19 by taking some simple precautions:\n\n**Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.**\nWhy? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.\n\n**Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.**\nWhy?  When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.\n\n**Avoid touching eyes, nose and mouth**\nWhy? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.\n\n** Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your elbow crease or tissue when you cough or sneeze. Then dispose of the used tissue immediately.**\n"
         )
 
+        embed25.add_field(name="Why?", value="Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, flu and COVID-19.\n\n", inline=False)
+        embed25.add_field(name="Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.\nWhy?", value=" National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections.\n\n", inline=False)
+        embed25.add_field(name="Keep up to date on the latest COVID-19 hotspots (cities or local areas where COVID-19 is spreading widely).", value="If possible, avoid traveling to places  – especially if you are an older person or have diabetes, heart or lung disease.**\n", inline=False)
+        embed25.add_field(name="Why?", value="You have a higher chance of catching COVID-19 in one of these areas.", inline=False)
         embed25.set_footer(text="`c!help 3` for questions and c!help for menu.")
 
         embed26 = discord.Embed(
@@ -164,7 +168,7 @@ class helper(commands.Cog):
 
         embed29 = discord.Embed(
             color = discord.Color.blurple(),
-            title = "Is there anything I should not do?",
+            title = "Is there anything I should abnegate?",
             description = "\n\nThe following measures ARE NOT effective against COVID-19 and can be harmful:\n\nSmoking\nWearing multiple masks\nTaking antibiotics\n\nIn any case, if you have fever, cough and difficulty breathing seek medical care early to reduce the risk of developing a more severe infection and be sure to share your recent travel history with your health care provider."
         )
 
@@ -186,84 +190,87 @@ class helper(commands.Cog):
 
         embed31.set_footer(text="`c!help 3` for questions and c!help for menu.")
 
+        server = ctx.guild
+
         if(type==0):
             await ctx.author.send(embed=embed0)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==9):
             await ctx.author.send(embed=embed)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==1):
             await ctx.author.send(embed=embed1)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==2):
             await ctx.author.send(embed=embed2)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==3):
             await ctx.author.send(embed=embed3)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==4):
             await ctx.author.send(embed=embed4)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==5):
             await ctx.author.send(embed=embed5)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==20):
             await ctx.author.send(embed=embed20)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==21):
             await ctx.author.send(embed=embed21)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==22):
             await ctx.author.send(embed=embed22)
-            await ctx.send(m)
+            if (len(server.members) > 0):
+                await ctx.send(m)
         elif(type==23):
             await ctx.author.send(embed=embed23)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==24):
             await ctx.author.send(embed=embed24)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==25):
             await ctx.author.send(embed=embed25)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==26):
             await ctx.author.send(embed=embed26)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==27):
             await ctx.author.send(embed=embed27)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==28):
             await ctx.author.send(embed=embed28)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==29):
             await ctx.author.send(embed=embed29)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==30):
             await ctx.author.send(embed=embed30)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         elif(type==31):
             await ctx.author.send(embed=embed31)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
         else:
             await ctx.author.send(embed=embed)
-            if ctx.guild is True:
+            if (len(server.members) > 0):
                 await ctx.send(m)
 
 def setup(bot):
