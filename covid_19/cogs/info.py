@@ -6,7 +6,15 @@ class helper(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['h', 'info'])
+    @commands.command()
+    async def info(self, ctx):
+        embed = discord.Embed(
+            color = discord.Colour.blue(),
+            title = "Basic information of this bot",
+            description = "Developer "
+        )
+
+    @commands.command(aliases=['h'])
     async def help(self, ctx, type=9):
 
         m = 'Sent you a DM!'
@@ -18,22 +26,25 @@ class helper(commands.Cog):
         )
 
         embed.add_field(name="Reply with the following commands to get the latest information of the topic -", value="``\n------------------------------------------------", inline=False)
-        embed.add_field(name="`c!help 0` for", value="Statistics about Coronavirus (COVID-19) around the world\n------------------------------------------------", inline=False)
+        embed.add_field(name="`c!help 0` for", value="Bot commands\n------------------------------------------------", inline=False)
         embed.add_field(name="`c!help 1` for", value="how to protect yourself\n------------------------------------------------", inline=False)
         embed.add_field(name="`c!help 2` for", value="Your questions answered\n------------------------------------------------", inline=False)
         embed.add_field(name="`c!help 3` for", value="Mythbusters\n------------------------------------------------", inline=False)
         embed.add_field(name="`c!help 4` for", value="Travel Advice\n------------------------------------------------", inline=False)
         embed.add_field(name="`c!help 5` for", value="News & Press\n------------------------------------------------", inline=False)
+        embed.add_field(name="Links -", value="Support Server = https://discord.com/invite/k9Vxdjd\nGitHub = https://github.com/HimanshuMS/covid-19_bot")
 
         embed0 = discord.Embed(
             color = discord.Color.blue(),
             title = "Statistics",
-            description = "Statistics about spread of Coronavirus (COVID-19) around the world i.e Counting Numbers\naliases: `stat`, `stats`, `s`, `data`\n``\n------------------------------------------------"
+            description = "Statistics about spread of Coronavirus (COVID-19) around the world i.e Counting Numbers\n``\n------------------------------------------------"
         )
 
         embed0.add_field(name="c!stat` for", value="Total statistics of every countries combined\n------------------------------------------------", inline=False)
         embed0.add_field(name="`c!stat <country initials>` for", value="Checking statistics of a specific country, eg. `c!stat us` or `c!stat usa` or `c!stat uk` etc\n------------------------------------------------", inline=False)
         embed0.add_field(name="`c!stat <country name>` for", value="Checking statistics of a specific country, eg. `c!stat china` etc.\n------------------------------------------------", inline=False)
+        embed0.add_field(name="`c!s <state>` and `c!s <state>, <district>` for", value="Checking statistics of specific state eg. `c!s Maharashtra`, and a district in that state eg. `c!s Maharashtra, Mumbai`\n------------------------------------------------", inline=False)
+        embed0.add_field(name="`Fun Commands`", value="`c!tod <truth/dare>` truth and dare command\n------------------------------------------------", inline=False)
         embed0.set_footer(text="Inspired by picklejason ;)")
 
         embed1 = discord.Embed(
