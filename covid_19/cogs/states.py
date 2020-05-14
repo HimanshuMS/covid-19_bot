@@ -15,6 +15,25 @@ class State(commands.Cog):
     mt = m.T
     sums = mt[''].sum()'''
 
+    @commands.command(aliases=['list'])
+    async def _list(self, ctx, *, location=None):
+        data = pd.read_json('https://api.covid19india.org/state_district_wise.json')
+        if(location == None):
+            await ctx.send('Please enter name of a state!')
+            return
+        else:
+            location = location.title()
+
+        k = location.split(',')
+        if(len(k) == 1):
+            if(k[0].strip() == 'State' or 'States'):
+                m = data.columns.tolist()
+                await ctx.send(m)
+        else:
+            if(k[1].strip() == 'District' or 'Districts'):
+                m = pd.DataFrame(data[k[0]][0]).columns.tolist()
+                await ctx.send(m)
+
     @commands.command()
     async def s(self, ctx, *, location=None):
         data = pd.read_json('https://api.covid19india.org/districts_daily.json')
@@ -71,6 +90,8 @@ class State(commands.Cog):
             active_list = []
 
             for index, row in city_data.iterrows():
+                if(row[0] is None):
+                    continue
                 df = pd.Series(row[0])
                 days_list.append(df['date'])
                 confirmed_list.append(df['confirmed'])
@@ -99,6 +120,7 @@ class State(commands.Cog):
                 active = pd.DataFrame(data[k[0]][0])[k[1].strip()]['active']
                 death = pd.DataFrame(data[k[0]][0])[k[1].strip()]['deceased']
                 recovered = pd.DataFrame(data[k[0]][0])[k[1].strip()]['recovered']
+
             else:
                 confirmed = pd.DataFrame(data[location][0].strip()).T['confirmed'].sum()
                 active = pd.DataFrame(data[location][0].strip()).T['active'].sum()
@@ -110,7 +132,7 @@ class State(commands.Cog):
 
         embed = discord.Embed(
             title = f'Coronavirus (Covid-19) cases for {location}',
-            description = f'``\n-----------------------------------------------\n:warning: **confirmed**: {confirmed} ({confirmed_new})\n-----------------------------------------------\n:skull: **Deaths**: {death} ({death_new})\n-----------------------------------------------\n:heart: **Recovered**: {recovered} ({recovered_new})\n-----------------------------------------------\n:mask: **Active Cases**: {active} ({active_new})\n-----------------------------------------------\n:coffin: **Mortality Rate:** {mortality_rate}%\n------------------------------------------------\n:+1: **Recovery Rate:** {recovery_rate}%\n------------------------------------------------',
+            description = f'``\n-----------------------------------------------\n:warning: **confirmed**: {confirmed} ({confirmed_new})\n-----------------------------------------------\n:skull: **Deaths**: {death} ({death_new})\n-----------------------------------------------\n:heart: **Recovered**: {recovered} ({recovered_new})\n-----------------------------------------------\n:mask: **Active Cases**: {active} ({active_new})\n-----------------------------------------------\n:coffin: **Mortality Rate:** {mortality_rate}%\n------------------------------------------------\n:+1: **Recovery Rate:** {recovery_rate}%\n------------------------------------------------\nplease [vote here](https://top.gg/bot/691686250389831690/vote) if you find this information helpful\n------------------------------------------------\n',
             color = discord.Color.blue()
         )
 
