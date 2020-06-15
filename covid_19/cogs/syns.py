@@ -21,16 +21,6 @@ class Stats(commands.Cog):
         deaths_reported = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
         recovered_cases = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
         
-        '''url = 'https://www.worldometers.info/coronavirus/'
-        header = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
-        "X-Requested-With": "XMLHttpRequest"
-        }
-
-        r = requests.get(url, headers=header)
-        data_list = pd.read_html(r.text)
-        data_table = data_list[0].replace(to_replace = np.NaN, value = 0)'''
-        
         cols = confirmed_cases.keys()
         date = list(confirmed_cases)[-1]
         r_cols = recovered_cases.keys()
